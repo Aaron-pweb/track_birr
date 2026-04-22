@@ -3,7 +3,7 @@ package com.example.track_birr.di
 import android.content.Context
 import androidx.room.Room
 import com.example.track_birr.data.local.AppDatabase
-import com.example.track_birr.data.local.ExampleDao
+import com.example.track_birr.data.local.ExpenseDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,7 +26,7 @@ object DatabaseModule {
     }
 
     @Provides
-    fun provideExampleDao(database: AppDatabase): ExampleDao {
-        return database.exampleDao()
+    fun provideExpenseDao(database: AppDatabase): ExpenseDao {
+        return database.expenseDao()
     }
 }
