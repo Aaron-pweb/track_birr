@@ -27,3 +27,4 @@ secrets.properties
 /captures/
 .externalNativeBuild
 .cxx/
+node_modules/
