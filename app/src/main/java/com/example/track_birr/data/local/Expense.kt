@@ -44,5 +44,10 @@ data class Expense(
      * Useful for tracking money received versus money spent.
      */
     @ColumnInfo(name = "is_income")
-    val isIncome: Boolean
+    val isIncome: Boolean,
+
+    /**
+     * The category of the transaction (e.g., 'Food', 'Transport', 'Utilities').
+     */
+    val category: String = "Uncategorized"
 )

@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.track_birr.ui.screens.HomeScreen
+import com.example.track_birr.ui.MainAppScreen
 import com.example.track_birr.ui.theme.TrackbirrTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,9 +19,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TrackbirrTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    HomeScreen(modifier = Modifier.padding(innerPadding))
-                }
+                MainAppScreen()
             }
         }
     }

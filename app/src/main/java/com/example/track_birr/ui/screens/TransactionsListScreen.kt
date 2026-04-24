@@ -18,7 +18,7 @@ import com.example.track_birr.ui.viewmodels.HomeViewModel
 
 @Preview
 @Composable
-fun HomeScreen(
+fun TransactionsListScreen(
     modifier: Modifier = Modifier,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
