@@ -15,6 +15,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.track_birr.ui.navigation.Screen
+import com.example.track_birr.ui.screens.AddTransactionScreen
 import com.example.track_birr.ui.screens.DashboardScreen
 import com.example.track_birr.ui.screens.ProfileScreen
 import com.example.track_birr.ui.screens.TransactionsListScreen
@@ -35,7 +36,7 @@ fun MainAppScreen() {
                 val currentRoute = navBackStackEntry?.destination?.route
                 items.forEach { screen ->
                     NavigationBarItem(
-                        icon = { Icon(screen.icon, contentDescription = screen.title) },
+                        icon = { screen.icon?.let { Icon(it, contentDescription = screen.title) } },
                         label = { Text(screen.title) },
                         selected = currentRoute == screen.route,
                         onClick = {
@@ -64,8 +65,17 @@ fun MainAppScreen() {
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(Screen.Dashboard.route) { DashboardScreen() }
-            composable(Screen.Transactions.route) { TransactionsListScreen() }
+            composable(Screen.Transactions.route) {
+                TransactionsListScreen(
+                    onNavigateToAddTransaction = { navController.navigate(Screen.AddTransaction.route) }
+                )
+            }
             composable(Screen.Profile.route) { ProfileScreen() }
+            composable(Screen.AddTransaction.route) {
+                AddTransactionScreen(
+                    onNavigateBack = { navController.popBackStack() }
+                )
+            }
         }
     }
 }
