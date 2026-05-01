@@ -6,6 +6,8 @@
 *.ipr
 *.iws
 .DS_Store
+.kotlin/
+*.hprof
 
 # Local configuration (crucial - contains SDK paths)
 local.properties
