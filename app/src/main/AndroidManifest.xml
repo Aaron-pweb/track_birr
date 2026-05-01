@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.READ_SMS" />
 
     <application
-        android:name=".TrackBirrApp"
+        android:name="com.example.track_birr.TrackBirrApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trackbirr">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.track_birr.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Trackbirr">
@@ -28,7 +28,7 @@
         </activity>
 
         <receiver
-            android:name=".SmsReceiver"
+            android:name=".sms.SmsReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
